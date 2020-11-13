@@ -15,14 +15,22 @@ Obviously the smaller samples had very low accuracy.
 
 Based on the above observations it can be seen that performance increases rapidly as number of training samples are increased upto a point. Also to get fairly good performance the number of samples do not need to be very high as long as the starting categories are well defined.
 
-In case of 10 and 100 samples the starting categories did not have any representative samples or very low numbers in certain categories so the model had no way to learn and propogate those samples.
+In case of 10 samples the starting categories did not have any representative samples or very low numbers in certain categories so the model had no way to learn and propogate those samples. This can be seen in the predictions, the first model predits either 0 or 4 presumably because it did not have any 0 samples so it assumes any category that it is unable to identify must belong to 0, and 4 becasue it seems like the most readily identifiable or applicable label (can be applied to 1, 7 for example.
 
-This can be seen in the predictions, the first model predits either 0 or 4 presumably because it did not have any 0 samples so it assumes any category that it is unable to identify must belong to 0, and 4 becasue it seems like the most readily identifiable or applicable label (can be applied to 1, 7 for example.
+![10 samples](https://github.com/taimur1871/label_propogation_experiments/blob/main/10%20samples.png)
 
 At 100 samples some categories have more samples than others. Intresting observation in this case is that the model does not accurately predict any of the labels in the categories that are over represented. For example 8 has most samples but it constantly mislabels it as 9 or 4.
 
+![100 samples](https://github.com/taimur1871/label_propogation_experiments/blob/main/100%20samples.png)
+
 At 250 samples the predcitions start getting better. However, 8, 9 and 4 still seem to cause problems.
+
+![250 samples](https://github.com/taimur1871/label_propogation_experiments/blob/main/250%20samples.png)
 
 At 500 samples the performance improves marginally in terms of F1 score but perfromance in identifying 9 improves. 8 still proves challenging.
 
+![500 samples](https://github.com/taimur1871/label_propogation_experiments/blob/main/500%20samples.png)
+
 Overall the number that seems to prove most challenging is 8, it is possible to confuse it with 3, 8, 9 or even 1 depending on the resoltion and handwriting style.
+
+![1000 samples](https://github.com/taimur1871/label_propogation_experiments/blob/main/1000%20samples.png)
